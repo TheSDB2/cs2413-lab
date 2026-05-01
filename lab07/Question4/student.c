@@ -23,4 +23,19 @@ void insertionSort(int arr[], int size) {
     // TODO: implement insertion sort
     (void)arr;
     (void)size;
+        if (size <= 1) return;
+
+    for (int i = 1; i < size; i++) {
+        int key = arr[i];   // element to insert
+        int j = i - 1;
+
+        // shift elements of the sorted part to the right
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        // place key in correct position
+        arr[j + 1] = key;
+    }
 }
